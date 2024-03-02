@@ -13,7 +13,11 @@ router.post('/registro', async(req,res) => {
         // Verificar si el usuario ya está registrado como recepcionista
         const recepcionistaExistente = await Recepcionista.findOne({ correo: req.body.correo });
         if (!recepcionistaExistente) {
-            return res.status(400).send('El correo no está registrado como recepcionista');
+            // Verificar si el usuario ya está registrado como veterinario
+            const veterinarioExistente = await Veterinario.findOne({ correo: req.body.correo });
+            if (!veterinarioExistente) {
+                return res.status(400).send('El correo no está registrado en el sistema de empleados');
+            }
         }
 
         // Verificar si el correo ya está registrado como usuario

@@ -1,41 +1,36 @@
 const mongoose = require('mongoose');
 
 const veterinarioSchema = mongoose.Schema({
-    id: {
-        type: Number,
-        require: true,
-        unique: true
-    }, 
     identificacion: {
         type: String,
-        require: true,
-        unique: true
+        required: true,
+        unique: true // Esto asegura que cada identificación sea única
     },
     nombres: {
         type: String,
-        require: true
+        required: true
     }, 
     apellidos: {
         type: String,
-        require: true
+        required: true
     },
     direccion: {
         type: String,
-        require: true
+        required: true
     },
     telefono: {
         type: String,
-        require: true
+        required: true
     },
     especialidad: {
         type: String,
-        require: true
+        required: true
     },
     correo: {
         type: String,
-        require: true,
-        unique: true
+        required: true,
+        unique: true // Esto asegura que cada correo sea único
     }
-})
+});
 
 module.exports = mongoose.model('veterinario', veterinarioSchema);

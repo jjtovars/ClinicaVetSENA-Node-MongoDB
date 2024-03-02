@@ -10,12 +10,14 @@ const recepcionistaRoute = require('./routes/recepcionistaRoutes');
 const veterinarioRoute = require('./routes/veterinarioRoutes');
 const clienteRoute = require('./routes/clienteRoutes');
 const productoRoute = require('./routes/productoRoutes');
+const mascotaRoute = require('./routes/mascotaRoutes');
 
 app.use('/clinivetSENA/usuarios', usuarioRoute);
 app.use('/clinivetSENA/recepcionistas', recepcionistaRoute);
 app.use('/clinivetSENA/veterinarios', veterinarioRoute);
 app.use('/clinivetSENA/clientes', clienteRoute);
 app.use('/clinivetSENA/productos', productoRoute);
+app.use('/clinivetSENA/mascotas', mascotaRoute);
 
 app.get('/', (req, res) => {
     res.send('Prueba 1 respuesta del servidor');

@@ -1,35 +1,31 @@
 const mongoose = require('mongoose');
 
 const recepcionistaSchema = mongoose.Schema({
-    id: {
-        type: Number,
-        require: true,
-        unique: true
-    }, 
+
     identificacion: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     },
     nombres: {
         type: String,
-        require: true
+        required: true
     }, 
     apellidos: {
         type: String,
-        require: true
+        required: true
     },
     direccion: {
         type: String,
-        require: true
+        required: true
     },
     telefono: {
         type: String,
-        require: true
+        required: true
     },
     correo: {
         type: String,
-        require: true,
+        required: true,
         unique: true
     }
 });
