@@ -5,14 +5,17 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const usuariosRoute = require('./routes/usuarioRoutes');
-app.use('/clinivetSENA', usuariosRoute);
-
+const usuarioRoute = require('./routes/usuarioRoutes');
 const recepcionistaRoute = require('./routes/recepcionistaRoutes');
-app.use('/clinivetSENA', recepcionistaRoute);
-
 const veterinarioRoute = require('./routes/veterinarioRoutes');
-app.use('/clinivetSENA', veterinarioRoute);
+const clienteRoute = require('./routes/clienteRoutes');
+const productoRoute = require('./routes/productoRoutes');
+
+app.use('/clinivetSENA/usuarios', usuarioRoute);
+app.use('/clinivetSENA/recepcionistas', recepcionistaRoute);
+app.use('/clinivetSENA/veterinarios', veterinarioRoute);
+app.use('/clinivetSENA/clientes', clienteRoute);
+app.use('/clinivetSENA/productos', productoRoute);
 
 app.get('/', (req, res) => {
     res.send('Prueba 1 respuesta del servidor');
